@@ -7,7 +7,8 @@ function App() {
 
   return (
     <>
-      <div>Hello Vit233e
+      <div>
+        <h1>Hello Vite- React Query</h1>
         <PostList />
       </div>
 
