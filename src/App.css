@@ -23,3 +23,35 @@ body {
     border-radius: 5px;
     margin-left:10px;
 }
+
+.container > form{
+    display: flex;
+    flex-direction: column;
+    gap:12px
+}
+
+.container > form > button{
+    cursor: pointer;
+    padding:8px;
+    font-size: 15px;
+    border:none;
+    background-color: rgb(37,37,37);
+    text-transform: uppercase;
+    color: white;
+    border-radius: 4px;
+}
+
+.postbox{
+    padding:10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
+.tags{
+    display: flex;
+    justify-content: space-around;
+}
+
+
