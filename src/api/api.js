@@ -22,4 +22,13 @@ const getTags = async () =>{
     return data;
 }
 
-export { getPosts, addPosts, getTags};
+const fetchProducts = async() =>{
+    const res  = await fetch("https://dummyjson.com/products");
+    const data = await res.json();
+    //console.log(data.products);
+    //const pData = await data.products;
+    return data.products;
+  }
+
+
+export { getPosts, addPosts, getTags, fetchProducts};
