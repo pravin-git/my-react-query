@@ -30,8 +30,8 @@ const MyShoppingCart = () => {
 
     return (
         <div style={{display:'flex'}}>
-            <Products/>
-            <Cart/>
+            {state.products && <Products state={state} dispatch={dispatch} />}
+            {<Cart state={state} dispatch={dispatch}/>}
         </div>
     )
 }
