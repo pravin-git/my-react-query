@@ -31,6 +31,7 @@ const Cart = ({ state, dispatch }) => {
                 cart.length > 0 ? (
                     cart.map((prod) => (
                         <div
+                            data-testId='cart-item'
                             key={prod.title}
                             style={{
                                 display: "flex",
@@ -68,7 +69,7 @@ const Cart = ({ state, dispatch }) => {
                                 gap: 10
                             }}>
                                 <button onClick={() => changeQty(prod.id, prod.qty - 1)} >-</button>
-                                <span>{prod.qty}</span>
+                                <span data-testid="quantity">{prod.qty}</span>
                                 <button onClick={() => changeQty(prod.id, prod.qty + 1)}>+</button>
                             </div>
                         </div>
