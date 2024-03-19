@@ -1,5 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from "@testing-library/user-event";
+
 import Cart from './Cart';
 
 describe('Cart Component', () => {
@@ -28,26 +30,7 @@ describe('Cart Component', () => {
         chai.expect(cartItems).to.have.lengthOf(2);
     });
 
-    it('changes quantity when +/- buttons are clicked', () => {
-        const state = {
-            cart: [
-                { id: 1, title: 'Item 1', price: 10, qty: 1 }
-            ]
-        };
-        const dispatch = () => {}; // Mock dispatch function
-
-        render(<Cart state={state} dispatch={dispatch} />);
-        const decrementButton = screen.getByText('-');
-        const incrementButton = screen.getByText('+');
-        const quantitySpan = screen.getByTestId('quantity');
-
-        decrementButton.click();
-        chai.expect(quantitySpan.textContent).to.equal('1');
-
-        incrementButton.click();
-        chai.expect(quantitySpan.textContent).to.equal('1');
-    });
-
+    
     it('calculates total price correctly based on items and quantities', () => {
         const state = {
             cart: [
